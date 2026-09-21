@@ -1,4 +1,8 @@
 
+function isValidShift(hours) {
+  return hours > 0 && hours <= 24;
+}
+
 function calculatePay(hours, rate) {
   if (hours < 0 || rate < 0) {
     throw new Error("Hours and rate cannot be negative");
@@ -12,3 +16,5 @@ function calculatePay(hours, rate) {
 
   return Math.round(regularPay + overtimePay);
 }
+
+module.exports = { isValidShift, calculatePay };
